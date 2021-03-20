@@ -1,0 +1,74 @@
+<div class="container">
+<div class="search">
+  <input type="text" placeholder="Search settings">
+  <div >15 Settings Found</div>
+</div>
+<div class="tab-menu">
+  <div [class.active]="currentTab == 'user'"
+  (click)="selectTab('user')">
+    User Settings
+  </div>
+  <div  [class.active]="currentTab == 'Workspace'"
+  (click)="selectTab('Workspace')">
+    Workspace Settings
+  </div>
+</div>
+
+<div class="setting-panel" *ngIf="currentTab == 'user'">
+  <div class="settingTreeView">
+    <span>Commoly Used</span>
+    <tree-root [nodes]="userMenuNodes" [options]="options"></tree-root>
+  </div>
+  <div class="settingConfigs">
+    <h5>Commonly Used</h5>
+    <app-home [groupName]="'Files:'" 
+[name]="'Auto Save'" 
+[remark]="'(Modified in: User)'" 
+[comMand]="'Controls auto save of dirty editors. Read more about autosave here.'"
+[value]="'off'"></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="' Font Size'" 
+[comMand]="'Controls the font size in pixels.'" 
+[value]="'14'"
+></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="'Font Family'" 
+[comMand]="'Controls the font family.'"
+ [value]="'Consolas, \'Courier New\', monospace'"
+ ></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="'Tab Size'" 
+[comMand]="'The number of spaces a tab is equal to. This setting is overridden based on the file contents when Editor: Detect Indentation is on.'" 
+[value]="'4'"></app-home>
+</div>
+</div>
+<div class="setting-panel" *ngIf="currentTab == 'Workspace'">
+  <div class="settingTreeView">
+    <span>Commoly Used</span>
+    <tree-root [nodes]="workspaceMenuNodes" [options]="options"></tree-root>
+  </div>
+  <div class="settingConfigs">
+    <h5>Commonly Used</h5>
+    <app-home [groupName]="'Files:'" 
+[name]="'Auto Save'" 
+[remark]="'(Modified in: User)'" 
+[comMand]="'Controls auto save of dirty editors. Read more about autosave here.'"
+[value]="'on'"></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="' Font Size'" 
+[comMand]="'Controls the font size in pixels.'" 
+[value]="'14'"
+></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="'Font Family'" 
+[comMand]="'Controls the font family.'"
+ [value]="'Consolas, \'Courier New\', monospace'"
+ ></app-home>
+<app-home [groupName]="'Editor:'" 
+[name]="'Tab Size'" 
+[comMand]="'The number of spaces a tab is equal to. This setting is overridden based on the file contents when Editor: Detect Indentation is on.'" 
+[value]="'10'"></app-home>
+</div>
+</div>
+</div>
+

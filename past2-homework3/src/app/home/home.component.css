@@ -1,0 +1,28 @@
+.container{
+    margin: 5px 5px;
+    padding: 5px;
+}
+
+.main{
+    word-wrap: break-word;
+}
+.main > .main-config-remark{
+    font-weight: 0.3rem;
+    opacity: 0.3;
+}
+.details{
+    font-size: 0.2rem;
+    opacity: 0.1;
+}
+
+.value > input{
+    width: 40vw;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.value > select {
+    width: 40vw;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
